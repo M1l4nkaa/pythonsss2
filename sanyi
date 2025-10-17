@@ -1,0 +1,137 @@
+1. Személyek életkora, legidősebb megkeresése
+# 1. feladat
+szemelyek = {
+    "Anna": 25,
+    "Béla": 32,
+    "Csaba": 29
+}
+
+for nev, eletkor in szemelyek.items():
+    print(f"{nev}: {eletkor} éves")
+
+legidosebb = max(szemelyek, key=lambda nev: szemelyek[nev])
+print(f"A legidősebb: {legidosebb}")
+
+2. Tantárgy-jegy szótár, átlag kiszámítása
+# 2. feladat
+jegyek = {
+    "matek": 4,
+    "magyar": 5,
+    "töri": 3
+}
+
+atlag = sum(jegyek.values()) / len(jegyek)
+print(f"Az átlagom: {atlag:.1f}")
+
+3. Gyümölcs ár lekérdezése
+# 3. feladat
+gyumolcsok = {
+    "alma": 250,
+    "banán": 300,
+    "narancs": 400
+}
+
+keresett = input("Adj meg egy gyümölcsnevet: ").lower()
+
+if keresett in gyumolcsok:
+    print(f"A(z) {keresett} ára: {gyumolcsok[keresett]} Ft")
+else:
+    print("Nincs ilyen gyümölcs!")
+
+4. Szógyakoriság egy mondatban
+# 4. feladat
+mondat = input("Adj meg egy mondatot: ")
+szavak = mondat.split()
+
+gyakorisag = {}
+for szo in szavak:
+    gyakorisag[szo] = gyakorisag.get(szo, 0) + 1
+
+print(gyakorisag)
+
+5. Két árlista összevonása, második az elsődleges
+# 5. feladat
+ar1 = {"alma": 300, "banán": 400}
+ar2 = {"banán": 350, "narancs": 500}
+
+egyesitett = ar1.copy()
+egyesitett.update(ar2)
+
+print(egyesitett)
+
+6. Tanuló kedvenc tantárgya
+# 6. feladat
+kedvencek = {
+    "Zsófi": "matek",
+    "Peti": "töri",
+    "Lili": "biológia"
+}
+
+nev = input("Adj meg egy tanuló nevét: ")
+
+if nev in kedvencek:
+    print(f"{nev} kedvenc tantárgya: {kedvencek[nev]}")
+else:
+    print("Nincs ilyen tanuló!")
+
+7. Betűgyakoriság számolása egy szóban
+# 7. feladat
+szo = input("Adj meg egy szót: ")
+
+betuk = {}
+for betu in szo:
+    betuk[betu] = betuk.get(betu, 0) + 1
+
+print(betuk)
+
+8. Filmek megjelenési éve
+# 8. feladat
+filmek = {
+    "Inception": 2010,
+    "Titanic": 1997,
+    "Matrix": 1999
+}
+
+film = input("Adj meg egy filmcímet: ")
+
+if film in filmek:
+    print(f"A(z) {film} {filmek[film]}-ben jelent meg.")
+else:
+    print("Nincs ilyen film az adatbázisban.")
+
+9. Diák jegyének módosítása
+# 9. feladat
+diakok = {
+    "Ádám": 4,
+    "Éva": 5,
+    "Noé": 3
+}
+
+nev = input("Adj meg egy diák nevét: ")
+
+if nev in diakok:
+    uj_jegy = int(input("Add meg az új jegyet (1-5): "))
+    diakok[nev] = uj_jegy
+    print("Frissített jegyek:", diakok)
+else:
+    print("Nincs ilyen nevű diák!")
+
+10. Városok és lakosság – lista, átlag, legnépesebb
+# 10. feladat
+varosok = {
+    "Budapest": 1750,
+    "Debrecen": 200,
+    "Szeged": 160,
+    "Pécs": 145
+}
+
+# Városnevek
+print("Városok:", ", ".join(varosok.keys()))
+
+# Átlagos lakosság
+atlag_lakossag = sum(varosok.values()) / len(varosok)
+print(f"Átlagos lakosság: {atlag_lakossag:.1f} ezer fő")
+
+# Legnépesebb város
+legnepesebb = max(varosok, key=lambda nev: varosok[nev])
+print(f"A legnépesebb város: {legnepesebb}")
